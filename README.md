@@ -109,9 +109,6 @@
 </a>&nbsp;&nbsp;
 <a href="https://github.com/PieroGozme">
   <img src="https://img.shields.io/badge/GitHub-17171c?style=for-the-badge&logo=github&logoColor=f78ca0" alt="GitHub">
-</a>&nbsp;&nbsp;
-<a href="mailto:pierodegozme18@gmail.com">
-  <img src="https://img.shields.io/badge/Email-f78ca0?style=for-the-badge&logo=gmail&logoColor=1a1a2e" alt="Email">
 </a>
 
 </div>
