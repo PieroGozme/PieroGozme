@@ -41,19 +41,19 @@ YAML_ROWS = [
     (1, "subject", "Piero Gozme"),
     (1, "role", "Backend Developer"),
     (1, "origin", "Peru"),
-    (1, "focus", "ERP · Facturacion Electronica · APIs"),
-    (1, "status", "Sistemas escalables · POO · MySQL"),
-    (1, "toolchain", "Laravel · CodeIgniter · Git"),
+    (1, "focus", "ERP | Facturacion Electronica | APIs"),
+    (1, "status", "Sistemas escalables | POO | MySQL"),
+    (1, "toolchain", "Laravel | CodeIgniter | Git"),
     (0, "stack", ""),
-    (1, "backend", "PHP · Laravel · CodeIgniter"),
-    (1, "databases", "MySQL · SQL"),
-    (1, "frontend", "JavaScript · HTML · CSS"),
-    (1, "mobile", "Kotlin · Android Studio"),
-    (1, "workflow", "Git · Scrum · Jira · ClickUp"),
+    (1, "backend", "PHP | Laravel | CodeIgniter"),
+    (1, "databases", "MySQL | SQL"),
+    (1, "frontend", "JavaScript | HTML | CSS"),
+    (1, "mobile", "Kotlin | Android Studio"),
+    (1, "workflow", "Git | Scrum | Jira | ClickUp"),
     (0, "contact", ""),
-    (1, "linkedin", "/in/piero-miguel-alejandro-gozme-perez-81b0a4353"),
+    (1, "linkedin", "/in/piero-gozme"),
     (1, "github", "PieroGozme"),
-    (1, "timezone", "UTC-5 · Peru"),
+    (1, "timezone", "UTC-5 | Peru"),
 ]
 
 THEMES = {
@@ -181,57 +181,68 @@ def floyd_steinberg(gray: np.ndarray) -> np.ndarray:
 
 
 def portrait_points(theme: str, rng: np.random.Generator) -> np.ndarray:
-    """Return sampled x/y banner coordinates from a 300x340 dither grid.
+    """Return banner coords from a chunky dither (ASCII-readable, not sparse noise).
 
-    Tuned for line-art / manga portraits: stronger contrast, denser midtones,
-    and a higher point budget so facial features stay readable.
+    Dither at half resolution (150x170) then expand each lit cell to a 2x2 block
+    so the face reads like terminal ASCII art instead of fine pink static.
     """
     source = Image.open(SOURCE).convert("RGBA")
-    # Slightly wider crop so glasses + hair silhouette stay in frame.
     w, h = source.size
-    crop_w = int(w * 0.72)
+    crop_w = int(w * 0.78)
     crop_h = int(crop_w * (340 / 300))
     left = max(0, (w - crop_w) // 2)
-    top = max(0, int(h * 0.04))
+    top = max(0, int(h * 0.02))
     if top + crop_h > h:
         top = max(0, h - crop_h)
     crop = source.crop((left, top, left + crop_w, min(h, top + crop_h))).resize(
         (300, 340), Image.Resampling.LANCZOS
     )
-    alpha = np.asarray(crop.getchannel("A"), dtype=np.float32) / 255.0
+    alpha_full = np.asarray(crop.getchannel("A"), dtype=np.float32) / 255.0
 
     if theme == "dark":
         bg = Image.new("RGBA", crop.size, "black")
         bg.alpha_composite(crop)
         prepared = ImageOps.grayscale(bg.convert("RGB"))
-        prepared = ImageOps.autocontrast(prepared, cutoff=2)
-        # Push midtones brighter so skin fills denser (less sparse noise).
-        prepared = ImageEnhance.Contrast(prepared).enhance(1.7)
-        prepared = ImageEnhance.Brightness(prepared).enhance(1.25)
-        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=1.4, percent=200, threshold=1))
+        prepared = ImageOps.autocontrast(prepared, cutoff=3)
+        prepared = ImageEnhance.Contrast(prepared).enhance(2.0)
+        prepared = ImageEnhance.Brightness(prepared).enhance(1.35)
+        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=1.2, percent=220, threshold=0))
         select_lit = True
     else:
         bg = Image.new("RGBA", crop.size, "white")
         bg.alpha_composite(crop)
         prepared = ImageOps.grayscale(bg.convert("RGB"))
-        prepared = ImageOps.autocontrast(prepared, cutoff=2)
-        prepared = ImageEnhance.Contrast(prepared).enhance(1.55)
-        prepared = ImageEnhance.Brightness(prepared).enhance(1.1)
-        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=1.4, percent=180, threshold=1))
+        prepared = ImageOps.autocontrast(prepared, cutoff=3)
+        prepared = ImageEnhance.Contrast(prepared).enhance(1.8)
+        prepared = ImageEnhance.Brightness(prepared).enhance(1.15)
+        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=1.2, percent=200, threshold=0))
         select_lit = False
 
-    bits = floyd_steinberg(np.asarray(prepared))
+    # Half-res dither → chunky cells (more like the ASCII reference).
+    small = prepared.resize((150, 170), Image.Resampling.BOX)
+    bits = floyd_steinberg(np.asarray(small))
     active = bits if select_lit else ~bits
+    alpha_small = np.asarray(
+        Image.fromarray((alpha_full * 255).astype("uint8")).resize(
+            (150, 170), Image.Resampling.BOX
+        ),
+        dtype=np.float32,
+    ) / 255.0
     if theme == "dark":
-        active &= alpha > 0.05
+        active &= alpha_small > 0.04
 
     ys, xs = np.where(active)
     if len(xs) == 0:
         return np.zeros((0, 2), dtype=np.float32)
-    points = np.column_stack((74 + xs, 154 + ys)).astype(np.float32)
-    # Prefer structured density over aggressive random thinning.
-    if len(points) > 28000:
-        points = points[rng.choice(len(points), 28000, replace=False)]
+
+    # Expand each cell to a filled 2x2 block in the 300x340 visual frame.
+    blocks = []
+    for x, y in zip(xs.tolist(), ys.tolist()):
+        x0, y0 = 74 + x * 2, 154 + y * 2
+        blocks.extend(((x0, y0), (x0 + 1, y0), (x0, y0 + 1), (x0 + 1, y0 + 1)))
+    points = np.asarray(blocks, dtype=np.float32)
+    if len(points) > 32000:
+        points = points[rng.choice(len(points), 32000, replace=False)]
     return points
 
 
@@ -345,9 +356,9 @@ def render_svg(
         '<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
         'aria-labelledby="title desc">',
-        "<title id=\"title\">Maria Claudia's live system profile</title>",
+        '<title id="title">Piero Gozme - Backend Developer profile</title>',
         '<desc id="desc">Animated terminal profile with a dithered portrait and '
-        "DevOps tool silhouettes.</desc>",
+        "Linux / Docker silhouettes.</desc>",
         "<defs>",
         '<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">'
         f'<feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="{t["shadow"]}" '
@@ -405,7 +416,7 @@ def render_svg(
         drift_opacity_values = ";".join(drift_opacity)
         d = point_path(pts)
         parts.append(
-            f'<path d="{d}" fill="none" stroke="{t["portrait"]}" stroke-width="1.35" '
+            f'<path d="{d}" fill="none" stroke="{t["portrait"]}" stroke-width="1.8" '
             'opacity=".94">'
             f'<animateTransform attributeName="transform" type="translate" begin="{INTRO_SECONDS}s" '
             f'dur="{loop_duration}s" repeatCount="indefinite" calcMode="linear" '
@@ -454,7 +465,7 @@ def render_svg(
             continue
         parts.append(
             f'<path d="{point_path(pts)}" fill="none" stroke="{t["portrait"]}" '
-            'stroke-width="1.35" opacity="0">'
+            'stroke-width="1.8" opacity="0">'
             f'<animate attributeName="opacity" begin="{num(starts[group])}s" dur=".8s" '
             'values="0;1" fill="freeze"/>'
             '<animate attributeName="opacity" begin="3.08s" dur=".12s" values="1;0" fill="freeze"/>'
@@ -466,7 +477,7 @@ def render_svg(
             # Small frame telemetry.
             f'<text x="58" y="551" fill="{t["muted"]}" '
             'font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="10">'
-            f'PTS {len(portrait):05d} · FS/SERPENTINE</text>',
+            f'PTS {len(portrait):05d} | FS/SERPENTINE</text>',
             # Right information panel (Vim YAML editor view).
             f'<rect x="474" y="88" width="672" height="472" rx="6" fill="{t["panel2"]}" '
             f'stroke="{t["line"]}"/>',
@@ -480,7 +491,7 @@ def render_svg(
             f'stroke="{t["chrome"]}"/>',
             f'<text x="1062" y="111" text-anchor="middle" fill="{t["chrome"]}" '
             'font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="13" '
-            'font-weight="700">@macu-dev</text>',
+            'font-weight="700">@PieroGozme</text>',
         ]
     )
 
@@ -552,7 +563,7 @@ def main() -> None:
             for name, image in logos.items()
         }
         svg = render_svg(theme, portraits[theme], sampled, hold_particles, rng)
-        output = ASSETS / f"banner-{theme}.v9.svg"
+        output = ASSETS / f"banner-{theme}.v10.svg"
         output.write_text(svg, encoding="utf-8")
         byte_size = output.stat().st_size
         print(

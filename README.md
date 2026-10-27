@@ -3,9 +3,9 @@
 <!-- CITY-POP BANNER -->
 <a href="https://github.com/PieroGozme">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-dark.v9.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-light.v9.svg">
-    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-light.v9.svg" width="960" alt="Perfil Backend de Piero Gozme">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-dark.v10.svg?v=10">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-light.v10.svg?v=10">
+    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-dark.v10.svg?v=10" width="960" alt="Perfil Backend de Piero Gozme">
   </picture>
 </a>
 
