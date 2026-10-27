@@ -34,7 +34,7 @@ HOLD_PARTICLE_COUNT = 2_400
 SEED = 314159
 LOGO_SUFFIXES = {".png", ".webp"}
 LOGO_ALIASES = {"kube": "kubernetes"}
-PREFERRED_LOGO_ORDER = ("linux", "kubernetes")
+PREFERRED_LOGO_ORDER = ("linux", "docker")
 
 YAML_ROWS = [
     (0, "profile", ""),
@@ -64,22 +64,22 @@ THEMES = {
         "line":    "#25344C",
         "muted":   "#8291A8",
         "text":    "#F0E6F0",
-        "portrait":"#F78CA0",   # city pop pink
-        "chrome":  "#C9B1D9",   # city pop lavender
-        "accent":  "#F78CA0",
+        "portrait":"#B0A685",   # terminal parchment / ASCII cream
+        "chrome":  "#C9B88A",
+        "accent":  "#B0A685",
         "shadow":  "#02050B",
     },
     "light": {
-        "bg":      "#FDF0F3",
+        "bg":      "#F7F3E8",
         "panel":   "#FFFFFF",
-        "panel2":  "#FDE8EE",
-        "line":    "#F0C0CE",
-        "muted":   "#9B7B8A",
-        "text":    "#2D1A24",
-        "portrait":"#E05F80",
-        "chrome":  "#7B5EA7",
-        "accent":  "#E05F80",
-        "shadow":  "#D4A0B0",
+        "panel2":  "#F0EAD8",
+        "line":    "#D4C9A8",
+        "muted":   "#8A7E62",
+        "text":    "#2A2418",
+        "portrait":"#6E6348",
+        "chrome":  "#8A7E62",
+        "accent":  "#6E6348",
+        "shadow":  "#C9B88A",
     },
 }
 
@@ -181,50 +181,57 @@ def floyd_steinberg(gray: np.ndarray) -> np.ndarray:
 
 
 def portrait_points(theme: str, rng: np.random.Generator) -> np.ndarray:
-    """Return sampled x/y banner coordinates from a 300x340 dither grid."""
+    """Return sampled x/y banner coordinates from a 300x340 dither grid.
+
+    Tuned for line-art / manga portraits: stronger contrast, denser midtones,
+    and a higher point budget so facial features stay readable.
+    """
     source = Image.open(SOURCE).convert("RGBA")
-    # Tighter head + shoulders crop so face detail fills the VISUAL.MAP frame.
+    # Slightly wider crop so glasses + hair silhouette stay in frame.
     w, h = source.size
-    crop_w = int(w * 0.60)
+    crop_w = int(w * 0.72)
     crop_h = int(crop_w * (340 / 300))
-    left = (w - crop_w) // 2
-    top = int(h * 0.08)
-    crop = source.crop((left, top, left + crop_w, top + crop_h)).resize((300, 340), Image.Resampling.LANCZOS)
-    rgb = crop.convert("RGB")
+    left = max(0, (w - crop_w) // 2)
+    top = max(0, int(h * 0.04))
+    if top + crop_h > h:
+        top = max(0, h - crop_h)
+    crop = source.crop((left, top, left + crop_w, min(h, top + crop_h))).resize(
+        (300, 340), Image.Resampling.LANCZOS
+    )
     alpha = np.asarray(crop.getchannel("A"), dtype=np.float32) / 255.0
 
-    # Put the portrait over a solid background to process lighting
     if theme == "dark":
         bg = Image.new("RGBA", crop.size, "black")
         bg.alpha_composite(crop)
         prepared = ImageOps.grayscale(bg.convert("RGB"))
-        prepared = ImageOps.autocontrast(prepared, cutoff=1)
-        prepared = ImageEnhance.Contrast(prepared).enhance(1.35)
-        prepared = ImageEnhance.Brightness(prepared).enhance(1.05)
-        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=2.0, percent=160, threshold=1))
+        prepared = ImageOps.autocontrast(prepared, cutoff=2)
+        # Push midtones brighter so skin fills denser (less sparse noise).
+        prepared = ImageEnhance.Contrast(prepared).enhance(1.7)
+        prepared = ImageEnhance.Brightness(prepared).enhance(1.25)
+        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=1.4, percent=200, threshold=1))
         select_lit = True
     else:
         bg = Image.new("RGBA", crop.size, "white")
         bg.alpha_composite(crop)
         prepared = ImageOps.grayscale(bg.convert("RGB"))
-        prepared = ImageOps.autocontrast(prepared, cutoff=1)
-        prepared = ImageEnhance.Contrast(prepared).enhance(1.25)
-        prepared = ImageEnhance.Brightness(prepared).enhance(1.05)
-        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=2.0, percent=150, threshold=1))
+        prepared = ImageOps.autocontrast(prepared, cutoff=2)
+        prepared = ImageEnhance.Contrast(prepared).enhance(1.55)
+        prepared = ImageEnhance.Brightness(prepared).enhance(1.1)
+        prepared = prepared.filter(ImageFilter.UnsharpMask(radius=1.4, percent=180, threshold=1))
         select_lit = False
 
     bits = floyd_steinberg(np.asarray(prepared))
     active = bits if select_lit else ~bits
     if theme == "dark":
-        active &= alpha > 0.08
+        active &= alpha > 0.05
 
-    # Keep the full 300×340 lattice — skipping 2×2 cells was the soft/blurry look.
     ys, xs = np.where(active)
     if len(xs) == 0:
         return np.zeros((0, 2), dtype=np.float32)
     points = np.column_stack((74 + xs, 154 + ys)).astype(np.float32)
-    if len(points) > 18000:
-        points = points[rng.choice(len(points), 18000, replace=False)]
+    # Prefer structured density over aggressive random thinning.
+    if len(points) > 28000:
+        points = points[rng.choice(len(points), 28000, replace=False)]
     return points
 
 
@@ -398,7 +405,7 @@ def render_svg(
         drift_opacity_values = ";".join(drift_opacity)
         d = point_path(pts)
         parts.append(
-            f'<path d="{d}" fill="none" stroke="{t["portrait"]}" stroke-width="1" '
+            f'<path d="{d}" fill="none" stroke="{t["portrait"]}" stroke-width="1.35" '
             'opacity=".94">'
             f'<animateTransform attributeName="transform" type="translate" begin="{INTRO_SECONDS}s" '
             f'dur="{loop_duration}s" repeatCount="indefinite" calcMode="linear" '
@@ -447,7 +454,7 @@ def render_svg(
             continue
         parts.append(
             f'<path d="{point_path(pts)}" fill="none" stroke="{t["portrait"]}" '
-            'stroke-width="1" opacity="0">'
+            'stroke-width="1.35" opacity="0">'
             f'<animate attributeName="opacity" begin="{num(starts[group])}s" dur=".8s" '
             'values="0;1" fill="freeze"/>'
             '<animate attributeName="opacity" begin="3.08s" dur=".12s" values="1;0" fill="freeze"/>'
