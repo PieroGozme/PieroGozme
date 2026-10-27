@@ -3,9 +3,9 @@
 <!-- CITY-POP BANNER -->
 <a href="https://github.com/PieroGozme">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
-    <img src="assets/banner-light.svg" width="960" alt="Perfil Backend de Piero Gozme">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-light.svg">
+    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-light.svg" width="960" alt="Perfil Backend de Piero Gozme">
   </picture>
 </a>
 
@@ -24,7 +24,7 @@
 ## `$ whoami`
 
 <p align="center">
-  <img src="assets/whoami-citypop.svg" width="960" alt="Terminal city-pop con el perfil de Piero Gozme, Backend Developer">
+  <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/whoami-citypop.svg" width="960" alt="Terminal city-pop con el perfil de Piero Gozme, Backend Developer">
 </p>
 
 <br>
@@ -85,14 +85,14 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/radar-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/radar-light.svg">
-    <img src="assets/radar-light.svg" width="390" alt="Radar de habilidades Backend">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-light.svg">
+    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-light.svg" width="390" alt="Radar de habilidades Backend">
   </picture>&nbsp;
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/radar-langs-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/radar-langs-light.svg">
-    <img src="assets/radar-langs-light.svg" width="370" alt="Radar de lenguajes">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-light.svg">
+    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-light.svg" width="370" alt="Radar de lenguajes">
   </picture>
 </p>
 
