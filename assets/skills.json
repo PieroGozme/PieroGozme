@@ -1,0 +1,30 @@
+{
+  "title": "Backend Skill Radar",
+  "_comment": "Self-rated, 0-100. Edit and regenerate with scripts/radar.py",
+  "axes": [
+    {
+      "label": "PHP / Laravel",
+      "value": 90
+    },
+    {
+      "label": "CodeIgniter",
+      "value": 88
+    },
+    {
+      "label": "MySQL / SQL",
+      "value": 87
+    },
+    {
+      "label": "ERP / Business Logic",
+      "value": 85
+    },
+    {
+      "label": "APIs / Integraciones",
+      "value": 82
+    },
+    {
+      "label": "Scrum / Delivery",
+      "value": 80
+    }
+  ]
+}
