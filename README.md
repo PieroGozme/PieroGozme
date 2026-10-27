@@ -50,33 +50,33 @@
 <table cellpadding="18" cellspacing="12">
   <tr>
     <td align="center" width="50%" bgcolor="#161A22">
-      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-languages.svg?v=2" alt="languages"><br><br>
+      <p align="center"><b><font color="#B0A685"><code>languages_frameworks</code></font></b></p>
       <img src="https://skillicons.dev/icons?i=php,laravel,nodejs,js,vue,react,java,kotlin&perline=8" alt="languages icons"><br><br>
-      <font color="#E8E0D0"><code>PHP · Laravel · Node · Vue · React · Java · Kotlin</code></font>
+      <p align="center"><font color="#E8E0D0"><code>PHP · Laravel · Node · Vue · React · Java · Kotlin</code></font></p>
     </td>
     <td align="center" width="50%" bgcolor="#161A22">
-      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-databases.svg?v=2" alt="databases"><br><br>
+      <p align="center"><b><font color="#B0A685"><code>databases</code></font></b></p>
       <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb&perline=3" alt="databases icons"><br><br>
-      <font color="#E8E0D0"><code>MySQL · PostgreSQL · MongoDB</code></font>
+      <p align="center"><font color="#E8E0D0"><code>MySQL · PostgreSQL · MongoDB</code></font></p>
     </td>
   </tr>
   <tr>
     <td align="center" bgcolor="#161A22">
-      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-tools.svg?v=2" alt="tools"><br><br>
+      <p align="center"><b><font color="#B0A685"><code>tools_workflow</code></font></b></p>
       <img src="https://skillicons.dev/icons?i=docker,linux,git,github,vscode,androidstudio,bash&perline=7" alt="tools icons"><br><br>
-      <font color="#E8E0D0"><code>Docker Desktop · SSH · Git · Linux · CLI</code></font>
+      <p align="center"><font color="#E8E0D0"><code>Docker Desktop · SSH · Git · Linux · CLI</code></font></p>
     </td>
     <td align="center" bgcolor="#161A22">
-      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-delivery.svg?v=2" alt="delivery"><br><br>
+      <p align="center"><b><font color="#B0A685"><code>product_delivery</code></font></b></p>
       <img src="https://skillicons.dev/icons?i=notion,wordpress,html,css,jquery&perline=5" alt="delivery icons"><br><br>
-      <font color="#E8E0D0"><code>Scrum · Jira · ClickUp · Notion · WordPress</code></font>
+      <p align="center"><font color="#E8E0D0"><code>Scrum · Jira · ClickUp · Notion · WordPress</code></font></p>
     </td>
   </tr>
   <tr>
     <td align="center" colspan="2" bgcolor="#161A22">
-      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-cloud.svg?v=2" alt="cloud"><br><br>
+      <p align="center"><b><font color="#B0A685"><code>cloud_infra</code></font></b></p>
       <img src="https://skillicons.dev/icons?i=azure,cloudflare,docker,linux,git&perline=5" alt="cloud icons"><br><br>
-      <font color="#E8E0D0"><code>Azure · Cloudflare · VPS Hetzner · Hostinger · Docker · SSH</code></font>
+      <p align="center"><font color="#E8E0D0"><code>Azure · Cloudflare · VPS Hetzner · Hostinger · Docker · SSH</code></font></p>
     </td>
   </tr>
 </table>
