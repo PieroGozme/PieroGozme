@@ -7,24 +7,24 @@
       "value": 90
     },
     {
-      "label": "CodeIgniter",
-      "value": 88
+      "label": "Node / APIs",
+      "value": 78
     },
     {
-      "label": "MySQL / SQL",
-      "value": 87
+      "label": "SQL / Databases",
+      "value": 86
     },
     {
-      "label": "ERP / Business Logic",
-      "value": 85
-    },
-    {
-      "label": "APIs / Integraciones",
-      "value": 82
-    },
-    {
-      "label": "Scrum / Delivery",
+      "label": "Docker / Linux",
       "value": 80
+    },
+    {
+      "label": "Vue / React",
+      "value": 72
+    },
+    {
+      "label": "VPS / Cloudflare",
+      "value": 75
     }
   ]
 }

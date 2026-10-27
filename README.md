@@ -1,6 +1,6 @@
 <div align="center">
 
-<!-- CITY-POP BANNER -->
+<!-- BANNER -->
 <a href="https://github.com/PieroGozme">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/banner-dark.v10.svg?v=10">
@@ -12,67 +12,77 @@
 <br>
 
 <a href="https://github.com/PieroGozme">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&amp;weight=700&amp;size=26&amp;duration=2600&amp;pause=900&amp;color=F78CA0&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Piero+Gozme+%E2%80%94+Backend+Developer%3BPHP+%7C+Laravel+%7C+CodeIgniter+%7C+MySQL%3BERP+%E2%80%A2+Facturacion+Electronica+%E2%80%A2+APIs%3BScrum+%C2%B7+Sistemas+escalables+%C2%B7+POO" alt="Banner animado con perfil Backend">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&amp;weight=600&amp;size=24&amp;duration=2600&amp;pause=900&amp;color=E8E0D0&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Piero+Gozme+%E2%80%94+Backend+Developer%3BPHP+%7C+Laravel+%7C+Node+%7C+Vue+%7C+React%3BMySQL+%7C+PostgreSQL+%7C+MongoDB+%7C+Docker%3BHetzner+%7C+Cloudflare+%7C+SSH+%7C+Linux" alt="Banner animado con perfil Backend">
 </a>
 
-<img src="https://komarev.com/ghpvc/?username=PieroGozme&style=flat&color=f78ca0&label=profile+views" alt="profile views">
+<br>
+
+<img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/bio.svg?v=1" width="820" alt="Bio de Piero Gozme">
+
+<br>
+
+<img src="https://komarev.com/ghpvc/?username=PieroGozme&style=flat&color=b0a685&label=profile+views" alt="profile views">
 
 </div>
 
 ---
 
-## `$ whoami`
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/heading-whoami.svg?v=1" width="920" alt="$ whoami">
+</p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/whoami-citypop.svg" width="960" alt="Terminal city-pop con el perfil de Piero Gozme, Backend Developer">
+  <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/whoami-citypop.svg?v=3" width="960" alt="Terminal profile de Piero Gozme, Backend Developer">
 </p>
 
 <br>
 
 <div align="center">
 
-## `$ cat tech-stack.yaml`
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/heading-stack.svg?v=1" width="920" alt="$ cat tech-stack.yaml">
+</p>
 
-<table border="1" cellpadding="14" bgcolor="#17171c">
+<table border="1" cellpadding="14" bgcolor="#12141A">
   <thead>
     <tr>
-      <th colspan="2" align="left"><code>PieroGozme:~$ cat tech-stack.yaml</code></th>
+      <th colspan="2" align="left"><font color="#E8E0D0"><code>PieroGozme:~$ cat tech-stack.yaml</code></font></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td width="50%" valign="top"><code>├─ ✦ languages_frameworks:</code><br><br>
-        <img src="https://skillicons.dev/icons?i=php,laravel,js,java,kotlin,cpp" alt="PHP, Laravel, JavaScript, Java, Kotlin y C++"><br>
-        <sub><code>PHP · Laravel · CodeIgniter · JavaScript · Java · Kotlin · C++</code></sub>
+      <td width="50%" valign="top"><font color="#B0A685"><code>|- languages_frameworks:</code></font><br><br>
+        <img src="https://skillicons.dev/icons?i=php,laravel,nodejs,js,vue,react,java,kotlin" alt="PHP, Laravel, Node, JS, Vue, React, Java, Kotlin"><br>
+        <sub><font color="#E8E0D0"><code>PHP | Laravel | CodeIgniter | Node.js | JavaScript | Vue | React | Java | Kotlin | C++</code></font></sub>
       </td>
-      <td width="50%" valign="top"><code>├─ ▣ databases:</code><br><br>
-        <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL"><br>
-        <sub><code>MySQL · SQL · PhpSpreadsheet</code></sub>
+      <td width="50%" valign="top"><font color="#B0A685"><code>|- databases:</code></font><br><br>
+        <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb" alt="MySQL, PostgreSQL y MongoDB"><br>
+        <sub><font color="#E8E0D0"><code>MySQL | PostgreSQL | MongoDB | SQL | PhpSpreadsheet</code></font></sub>
       </td>
     </tr>
     <tr>
-      <td valign="top"><code>├─ ⚙ tools_workflow:</code><br><br>
-        <img src="https://skillicons.dev/icons?i=git,github,vscode,androidstudio,bash" alt="Git, GitHub, VS Code, Android Studio y Bash"><br>
-        <sub><code>Git · GitHub · VS Code · Android Studio · CLI</code></sub>
+      <td valign="top"><font color="#B0A685"><code>|- tools_workflow:</code></font><br><br>
+        <img src="https://skillicons.dev/icons?i=docker,git,github,vscode,androidstudio,bash,linux" alt="Docker, Git, GitHub, VS Code, Android Studio, Bash y Linux"><br>
+        <sub><font color="#E8E0D0"><code>Docker Desktop | SSH | Git | GitHub | VS Code | Android Studio | CLI | Linux</code></font></sub>
       </td>
-      <td valign="top"><code>├─ ◉ product_delivery:</code><br><br>
+      <td valign="top"><font color="#B0A685"><code>|- product_delivery:</code></font><br><br>
         <img src="https://skillicons.dev/icons?i=notion,wordpress,html,css,jquery" alt="Notion, WordPress, HTML, CSS y jQuery"><br>
-        <sub><code>Scrum · Jira · ClickUp · Notion · WordPress</code></sub>
+        <sub><font color="#E8E0D0"><code>Scrum | Jira | ClickUp | Notion | WordPress</code></font></sub>
       </td>
     </tr>
     <tr>
-      <td valign="top"><code>├─ ☁ cloud_platform:</code><br><br>
-        <img src="https://skillicons.dev/icons?i=azure" alt="Azure"><br>
-        <sub><code>Azure (básico) · Microsoft Intune · Hostinger</code></sub>
+      <td valign="top"><font color="#B0A685"><code>|- cloud_platform:</code></font><br><br>
+        <img src="https://skillicons.dev/icons?i=azure,cloudflare,docker,linux" alt="Azure, Cloudflare, Docker y Linux"><br>
+        <sub><font color="#E8E0D0"><code>Azure | Cloudflare | VPS Hetzner | Hostinger | Docker | SSH</code></font></sub>
       </td>
-      <td valign="top"><code>╰─ ⌁ domain_focus:</code><br><br>
-        <sub><code>ERP · Facturación Electrónica · Nubefact · Osa-fact · SUNAT / SIRE</code></sub>
+      <td valign="top"><font color="#B0A685"><code>\\- domain_focus:</code></font><br><br>
+        <sub><font color="#E8E0D0"><code>ERP | Facturacion Electronica | Nubefact | Osa-fact | SUNAT / SIRE</code></font></sub>
       </td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="2"><code>status: ready&nbsp;&nbsp;·&nbsp;&nbsp;environment: production</code></td>
+      <td colspan="2"><font color="#E8E0D0"><code>status: ready  |  environment: production</code></font></td>
     </tr>
   </tfoot>
 </table>
@@ -81,34 +91,38 @@
 
 ---
 
-## `$ kubectl get signals --all-namespaces`
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/heading-signals.svg?v=1" width="920" alt="$ kubectl get signals">
+</p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-light.svg">
-    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-light.svg" width="390" alt="Radar de habilidades Backend">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-dark.svg?v=2">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-light.svg?v=2">
+    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-dark.svg?v=2" width="390" alt="Radar de habilidades Backend">
   </picture>&nbsp;
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-light.svg">
-    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-light.svg" width="370" alt="Radar de lenguajes">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-dark.svg?v=2">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-light.svg?v=2">
+    <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/radar-langs-dark.svg?v=2" width="370" alt="Radar de lenguajes">
   </picture>
 </p>
 
-<p align="center"><sub><code>signals: backend_skill_radar · language_stack_radar · status: healthy</code></sub></p>
+<p align="center"><sub><font color="#B0A685"><code>signals: backend_skill_radar | language_stack_radar | status: healthy</code></font></sub></p>
 
 ---
 
-## `$ connect --socials`
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/heading-socials.svg?v=1" width="920" alt="$ connect --socials">
+</p>
 
 <div align="center">
 
 <a href="https://www.linkedin.com/in/piero-miguel-alejandro-gozme-perez-81b0a4353">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  <img src="https://img.shields.io/badge/LinkedIn-12141A?style=for-the-badge&logo=linkedin&logoColor=E8E0D0" alt="LinkedIn">
 </a>&nbsp;&nbsp;
 <a href="https://github.com/PieroGozme">
-  <img src="https://img.shields.io/badge/GitHub-17171c?style=for-the-badge&logo=github&logoColor=f78ca0" alt="GitHub">
+  <img src="https://img.shields.io/badge/GitHub-12141A?style=for-the-badge&logo=github&logoColor=E8E0D0" alt="GitHub">
 </a>
 
 </div>
@@ -117,5 +131,5 @@
 <br>
 
 <div align="center">
-<sub>Hecho con 💖 y mucho café desde Perú · @PieroGozme</sub>
+<sub><font color="#B0A685">hecho desde peru | @PieroGozme</font></sub>
 </div>

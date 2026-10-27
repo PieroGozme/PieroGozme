@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 120" width="920" height="120" role="img">
+  <title>About Piero Gozme</title>
+  <path d="M12 8 H908 Q916 8 916 16 V96 L892 112 H12 Q4 112 4 104 V16 Q4 8 12 8 Z" fill="#12141A" stroke="#2E3340" stroke-width="1.5"/>
+  <text x="460" y="48" text-anchor="middle" fill="#E8E0D0" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="600">Backend developer by trade, with a love for ERP systems and clean APIs.</text>
+  <text x="460" y="78" text-anchor="middle" fill="#E8E0D0" font-family="Inter, ui-sans-serif, system-ui, Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="600">Curious about technology, shipping billing modules, and learning every day.</text>
+</svg>

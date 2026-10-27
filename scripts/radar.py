@@ -33,25 +33,25 @@ from pathlib import Path
 
 THEMES = {
     "dark": {
-        "grid": "#30363d",
-        "spoke": "#21262d",
-        "label": "#c9d1d9",
-        "value": "#8b949e",
-        "title": "#e6edf3",
-        "fill": "#8a2be2",
-        "stroke": "#8a2be2",
-        "vertex": "#8a2be2",
+        "grid": "#2E3340",
+        "spoke": "#1A1D26",
+        "label": "#E8E0D0",
+        "value": "#B0A685",
+        "title": "#E8E0D0",
+        "fill": "#B0A685",
+        "stroke": "#B0A685",
+        "vertex": "#E8E0D0",
         "bg": "none",
     },
     "light": {
-        "grid": "#d0d7de",
-        "spoke": "#e6eaef",
-        "label": "#1f2328",
-        "value": "#57606a",
-        "title": "#1f2328",
-        "fill": "#8a2be2",
-        "stroke": "#8a2be2",
-        "vertex": "#8a2be2",
+        "grid": "#D4C9A8",
+        "spoke": "#EDE6D6",
+        "label": "#2A2418",
+        "value": "#6E6348",
+        "title": "#2A2418",
+        "fill": "#6E6348",
+        "stroke": "#6E6348",
+        "vertex": "#2A2418",
         "bg": "none",
     },
 }
@@ -123,7 +123,7 @@ def from_github(user: str, token: str | None, limit: int, exclude: set[str],
 # --------------------------------------------------------------------------- #
 
 
-FONT = "ui-sans-serif,-apple-system,Segoe UI,Helvetica,Arial,sans-serif"
+FONT = "Inter,ui-sans-serif,-apple-system,Segoe UI,Helvetica,Arial,sans-serif"
 LBL, VAL, TTL = 13, 11, 15  # font sizes: axis label, axis value, title
 
 

@@ -12,7 +12,7 @@
     },
     {
       "label": "JavaScript",
-      "value": 78
+      "value": 82
     },
     {
       "label": "Java",
@@ -23,8 +23,8 @@
       "value": 62
     },
     {
-      "label": "C++",
-      "value": 58
+      "label": "Bash / SSH",
+      "value": 76
     }
   ]
 }
