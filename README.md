@@ -43,49 +43,47 @@
   <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/heading-stack.svg?v=1" width="920" alt="$ cat tech-stack.yaml">
 </p>
 
-<table border="1" cellpadding="14" bgcolor="#12141A">
-  <thead>
-    <tr>
-      <th colspan="2" align="left"><font color="#E8E0D0"><code>PieroGozme:~$ cat tech-stack.yaml</code></font></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td width="50%" valign="top"><font color="#B0A685"><code>|- languages_frameworks:</code></font><br><br>
-        <img src="https://skillicons.dev/icons?i=php,laravel,nodejs,js,vue,react,java,kotlin" alt="PHP, Laravel, Node, JS, Vue, React, Java, Kotlin"><br>
-        <sub><font color="#E8E0D0"><code>PHP | Laravel | CodeIgniter | Node.js | JavaScript | Vue | React | Java | Kotlin | C++</code></font></sub>
-      </td>
-      <td width="50%" valign="top"><font color="#B0A685"><code>|- databases:</code></font><br><br>
-        <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb" alt="MySQL, PostgreSQL y MongoDB"><br>
-        <sub><font color="#E8E0D0"><code>MySQL | PostgreSQL | MongoDB | SQL | PhpSpreadsheet</code></font></sub>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top"><font color="#B0A685"><code>|- tools_workflow:</code></font><br><br>
-        <img src="https://skillicons.dev/icons?i=docker,git,github,vscode,androidstudio,bash,linux" alt="Docker, Git, GitHub, VS Code, Android Studio, Bash y Linux"><br>
-        <sub><font color="#E8E0D0"><code>Docker Desktop | SSH | Git | GitHub | VS Code | Android Studio | CLI | Linux</code></font></sub>
-      </td>
-      <td valign="top"><font color="#B0A685"><code>|- product_delivery:</code></font><br><br>
-        <img src="https://skillicons.dev/icons?i=notion,wordpress,html,css,jquery" alt="Notion, WordPress, HTML, CSS y jQuery"><br>
-        <sub><font color="#E8E0D0"><code>Scrum | Jira | ClickUp | Notion | WordPress</code></font></sub>
-      </td>
-    </tr>
-    <tr>
-      <td valign="top"><font color="#B0A685"><code>|- cloud_platform:</code></font><br><br>
-        <img src="https://skillicons.dev/icons?i=azure,cloudflare,docker,linux" alt="Azure, Cloudflare, Docker y Linux"><br>
-        <sub><font color="#E8E0D0"><code>Azure | Cloudflare | VPS Hetzner | Hostinger | Docker | SSH</code></font></sub>
-      </td>
-      <td valign="top"><font color="#B0A685"><code>\\- domain_focus:</code></font><br><br>
-        <sub><font color="#E8E0D0"><code>ERP | Facturacion Electronica | Nubefact | Osa-fact | SUNAT / SIRE</code></font></sub>
-      </td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="2"><font color="#E8E0D0"><code>status: ready  |  environment: production</code></font></td>
-    </tr>
-  </tfoot>
+<img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-chrome.svg?v=1" width="920" alt="tech-stack terminal">
+
+<br><br>
+
+<table cellpadding="18" cellspacing="12">
+  <tr>
+    <td align="center" width="50%" bgcolor="#161A22">
+      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-languages.svg?v=1" alt="languages"><br><br>
+      <img src="https://skillicons.dev/icons?i=php,laravel,nodejs,js,vue,react,java,kotlin&perline=8" alt="languages icons"><br><br>
+      <font color="#E8E0D0"><code>PHP · Laravel · Node · Vue · React · Java · Kotlin</code></font>
+    </td>
+    <td align="center" width="50%" bgcolor="#161A22">
+      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-databases.svg?v=1" alt="databases"><br><br>
+      <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb&perline=3" alt="databases icons"><br><br>
+      <font color="#E8E0D0"><code>MySQL · PostgreSQL · MongoDB</code></font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="#161A22">
+      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-tools.svg?v=1" alt="tools"><br><br>
+      <img src="https://skillicons.dev/icons?i=docker,linux,git,github,vscode,androidstudio,bash&perline=7" alt="tools icons"><br><br>
+      <font color="#E8E0D0"><code>Docker Desktop · SSH · Git · Linux · CLI</code></font>
+    </td>
+    <td align="center" bgcolor="#161A22">
+      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-delivery.svg?v=1" alt="delivery"><br><br>
+      <img src="https://skillicons.dev/icons?i=notion,wordpress,html,css,jquery&perline=5" alt="delivery icons"><br><br>
+      <font color="#E8E0D0"><code>Scrum · Jira · ClickUp · Notion · WordPress</code></font>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2" bgcolor="#161A22">
+      <img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-label-cloud.svg?v=1" alt="cloud"><br><br>
+      <img src="https://skillicons.dev/icons?i=azure,cloudflare,docker,linux,git&perline=5" alt="cloud icons"><br><br>
+      <font color="#E8E0D0"><code>Azure · Cloudflare · VPS Hetzner · Hostinger · Docker · SSH</code></font>
+    </td>
+  </tr>
 </table>
+
+<br>
+
+<img src="https://raw.githubusercontent.com/PieroGozme/PieroGozme/main/assets/stack-footer.svg?v=1" width="920" alt="status ready">
 
 </div>
 
